@@ -10,107 +10,107 @@
 	#HotkeyInterval
 	#KeyHistory 0
 ;===================================================================================
-------------------------------------------------------------------------------------------------------------
-                                        -----Mane Ini KEY-----
-------------------------------------------------------------------------------------------------------------
-;===================================================================================
-	IniRead, key1, Settings.ini, KeySetup, KEY1
-	IniRead, key3, Settings.ini, KeySetup, KEY3
-	IniRead, key4, Settings.ini, KeySetup, KEY4
-	IniRead, key5, Settings.ini, KeySetup, KEY5
-	IniRead, key6, Settings.ini, KeySetup, KEY6
-	IniRead, key7, Settings.ini, KeySetup, KEY7
-	IniRead, key8, Settings.ini, KeySetup, KEY8
-	IniRead, key9, Settings.ini, KeySetup, KEY9
-	IniRead, key10, Settings.ini, KeySetup, KEY10
-	IniRead, key11, Settings.ini, KeySetup, KEY11
-	IniRead, key12, Settings.ini, KeySetup, KEY12
-	IniRead, key13, Settings.ini, KeySetup, KEY13
-	IniRead, key14, Settings.ini, KeySetup, KEY14
-	IniRead, key15, Settings.ini, KeySetup, KEY15
-	IniRead, key16, Settings.ini, KeySetup, KEY16
-	IniRead, key17, Settings.ini, KeySetup, KEY17
-	IniRead, key18, Settings.ini, KeySetup, KEY18
-	IniRead, key19, Settings.ini, KeySetup, KEY19
-;===================================================================================
-------------------------------------------------------------------------------------------------------------
-                                        -----Mane Ini Radial-----
-------------------------------------------------------------------------------------------------------------
-;===================================================================================
-	IniRead, Radio1Rez, Settings.ini, Resolution, 1920x1080
-	IniRead, Radio2Rez, Settings.ini, Resolution, 1680x1050
-	IniRead, Radio3Rez, Settings.ini, Resolution, 1440x900
-	IniRead, Radio4Rez, Settings.ini, Resolution, 1280x1024
-	IniRead, Radio5Rez, Settings.ini, Resolution, 1280x720
-	IniRead, Radio6Rez, Settings.ini, Resolution, 1920x1920
-	IniRead, Radio1Gen, Settings.ini, Gender, Мужской 
-;===================================================================================
-------------------------------------------------------------------------------------------------------------
-                                    -----Mane Ini Peref-----
-------------------------------------------------------------------------------------------------------------
-;===================================================================================
-	IniRead, sTime, Settings.ini, timestamp, sTime
-;===================================================================================
-	IniRead, cX, Settings.ini, cord, cX
-	IniRead, cY, Settings.ini, cord, cY
-	IniRead, c2Y, Settings.ini, cord, c2Y
-;===================================================================================
-	IniRead, mMir1, Settings.ini, Miranda, mMir1
-	IniRead, mMir2, Settings.ini, Miranda, mMir2
-	IniRead, mMir3, Settings.ini, Miranda, mMir3
-	IniRead, mMir4, Settings.ini, Miranda, mMir4
-	IniRead, mMir5, Settings.ini, Miranda, mMir5
-;===================================================================================
-	IniRead, bSteal1, Settings.ini, Steal, bSteal1
-	IniRead, bSteal2, Settings.ini, Steal, bSteal2
-;===================================================================================
-	IniRead, rColor1, Settings.ini, Color, rColor1
-	IniRead, rColor2, Settings.ini, Color, rColor2
-;===================================================================================
-	IniRead, gbadge, Settings.ini, Badge, gbadge
-;===================================================================================
-	IniRead, qfrac, Settings.ini, Personal, qfrac
-	IniRead, wTel, Settings.ini, Personal, wTel
-	IniRead, vdis, Settings.ini, Personal, vdis
-	 if vdis=ERROR
-	{
-;===================================================================================
-------------------------------------------------------------------------------------------------------------
-                                    -----Предустановка-----
-------------------------------------------------------------------------------------------------------------
-;===================================================================================
-	IniWrite, LSPD, Settings.ini, Personal, qfrac
-;===================================================================================
-	IniWrite, На груди висит бейджик: [LSPD |  CPD | Thomas Zakonov | 102340], Settings.ini, Badge, gbadge
-;===================================================================================
-	IniWrite, 123-123-123, Settings.ini, Personal, wTel
-;===================================================================================
-	IniWrite, yashiza.s.bekonom@disc.com, Settings.ini, Personal, vdis
-;===================================================================================
-	IniWrite, 1000, Settings.ini, timestamp, sTime
-;===================================================================================
-	IniWrite, 0, Settings.ini, cord, cX
-	IniWrite, 0, Settings.ini, cord, cY
-	IniWrite, 530, Settings.ini, cord, c2Y
-;===================================================================================
-	IniWrite, 750, Settings.ini, Steal, bSteal1
-	IniWrite, 45, Settings.ini, Steal, bSteal2
-;===================================================================================
-	IniWrite, Yellow, Settings.ini, Color, rColor1
-	IniWrite, White, Settings.ini, Color, rColor2
-;===================================================================================
-	IniWrite, 1. Вы имеете право хранить молчание., Settings.ini, Miranda, mMir1
-	IniWrite, 2. Все что Вы скажите может и будет использовано против Вас., Settings.ini, Miranda, mMir2
-	IniWrite, 3. Вы имеете право на пользование услугами адвоката., Settings.ini, Miranda, mMir3
-	IniWrite, 4. Если вы не можете оплатить услуги адвоката он будет предоставлен вам государством бесплатно., Settings.ini, Miranda, mMir4
-	IniWrite, 5. Вы имеете право на пользование личным мобильным телефоном длительностью до 3 минут., Settings.ini, Miranda, mMir5
-;===================================================================================
-	IniWrite, 1, Settings.ini, Gender, Мужской
-	IniWrite, Tab, Settings.ini, KeySetup, key4
-		reload
-;===================================================================================
-	}
-;===================================================================================
+; мигрировано ;------------------------------------------------------------------------------------------------------------
+; мигрировано ;                                        -----Mane Ini KEY-----
+; мигрировано ;------------------------------------------------------------------------------------------------------------
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, key1, Settings.ini, KeySetup, KEY1
+; мигрировано ;	IniRead, key3, Settings.ini, KeySetup, KEY3
+; мигрировано ;	IniRead, key4, Settings.ini, KeySetup, KEY4
+; мигрировано ;	IniRead, key5, Settings.ini, KeySetup, KEY5
+; мигрировано ;	IniRead, key6, Settings.ini, KeySetup, KEY6
+; мигрировано ;	IniRead, key7, Settings.ini, KeySetup, KEY7
+; мигрировано ;	IniRead, key8, Settings.ini, KeySetup, KEY8
+; мигрировано ;	IniRead, key9, Settings.ini, KeySetup, KEY9
+; мигрировано ;	IniRead, key10, Settings.ini, KeySetup, KEY10
+; мигрировано ;	IniRead, key11, Settings.ini, KeySetup, KEY11
+; мигрировано ;	IniRead, key12, Settings.ini, KeySetup, KEY12
+; мигрировано ;	IniRead, key13, Settings.ini, KeySetup, KEY13
+; мигрировано ;	IniRead, key14, Settings.ini, KeySetup, KEY14
+; мигрировано ;	IniRead, key15, Settings.ini, KeySetup, KEY15
+; мигрировано ;	IniRead, key16, Settings.ini, KeySetup, KEY16
+; мигрировано ;	IniRead, key17, Settings.ini, KeySetup, KEY17
+; мигрировано ;	IniRead, key18, Settings.ini, KeySetup, KEY18
+; мигрировано ;	IniRead, key19, Settings.ini, KeySetup, KEY19
+; мигрировано ;;===================================================================================
+; мигрировано ;------------------------------------------------------------------------------------------------------------
+; мигрировано ;                                        -----Mane Ini Radial-----
+; мигрировано ;------------------------------------------------------------------------------------------------------------
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, Radio1Rez, Settings.ini, Resolution, 1920x1080
+; мигрировано ;	IniRead, Radio2Rez, Settings.ini, Resolution, 1680x1050
+; мигрировано ;	IniRead, Radio3Rez, Settings.ini, Resolution, 1440x900
+; мигрировано ;	IniRead, Radio4Rez, Settings.ini, Resolution, 1280x1024
+; мигрировано ;	IniRead, Radio5Rez, Settings.ini, Resolution, 1280x720
+; мигрировано ;	IniRead, Radio6Rez, Settings.ini, Resolution, 1920x1920
+; мигрировано ;	IniRead, Radio1Gen, Settings.ini, Gender, Мужской 
+; мигрировано ;;===================================================================================
+; мигрировано ;------------------------------------------------------------------------------------------------------------
+; мигрировано ;                                    -----Mane Ini Peref-----
+; мигрировано ;------------------------------------------------------------------------------------------------------------
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, sTime, Settings.ini, timestamp, sTime
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, cX, Settings.ini, cord, cX
+; мигрировано ;	IniRead, cY, Settings.ini, cord, cY
+; мигрировано ;	IniRead, c2Y, Settings.ini, cord, c2Y
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, mMir1, Settings.ini, Miranda, mMir1
+; мигрировано ;	IniRead, mMir2, Settings.ini, Miranda, mMir2
+; мигрировано ;	IniRead, mMir3, Settings.ini, Miranda, mMir3
+; мигрировано ;	IniRead, mMir4, Settings.ini, Miranda, mMir4
+; мигрировано ;	IniRead, mMir5, Settings.ini, Miranda, mMir5
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, bSteal1, Settings.ini, Steal, bSteal1
+; мигрировано ;	IniRead, bSteal2, Settings.ini, Steal, bSteal2
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, rColor1, Settings.ini, Color, rColor1
+; мигрировано ;	IniRead, rColor2, Settings.ini, Color, rColor2
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, gbadge, Settings.ini, Badge, gbadge
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniRead, qfrac, Settings.ini, Personal, qfrac
+; мигрировано ;	IniRead, wTel, Settings.ini, Personal, wTel
+; мигрировано ;	IniRead, vdis, Settings.ini, Personal, vdis
+; мигрировано ;	 if vdis=ERROR
+; мигрировано ;	{
+; мигрировано ;;===================================================================================
+; мигрировано ;------------------------------------------------------------------------------------------------------------
+; мигрировано ;                                    -----Предустановка-----
+; мигрировано ;------------------------------------------------------------------------------------------------------------
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, LSPD, Settings.ini, Personal, qfrac
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, На груди висит бейджик: [LSPD |  CPD | Thomas Zakonov | 102340], Settings.ini, Badge, gbadge
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, 123-123-123, Settings.ini, Personal, wTel
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, yashiza.s.bekonom@disc.com, Settings.ini, Personal, vdis
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, 1000, Settings.ini, timestamp, sTime
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, 0, Settings.ini, cord, cX
+; мигрировано ;	IniWrite, 0, Settings.ini, cord, cY
+; мигрировано ;	IniWrite, 530, Settings.ini, cord, c2Y
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, 750, Settings.ini, Steal, bSteal1
+; мигрировано ;	IniWrite, 45, Settings.ini, Steal, bSteal2
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, Yellow, Settings.ini, Color, rColor1
+; мигрировано ;	IniWrite, White, Settings.ini, Color, rColor2
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, 1. Вы имеете право хранить молчание., Settings.ini, Miranda, mMir1
+; мигрировано ;	IniWrite, 2. Все что Вы скажите может и будет использовано против Вас., Settings.ini, Miranda, mMir2
+; мигрировано ;	IniWrite, 3. Вы имеете право на пользование услугами адвоката., Settings.ini, Miranda, mMir3
+; мигрировано ;	IniWrite, 4. Если вы не можете оплатить услуги адвоката он будет предоставлен вам государством бесплатно., Settings.ini, Miranda, mMir4
+; мигрировано ;	IniWrite, 5. Вы имеете право на пользование личным мобильным телефоном длительностью до 3 минут., Settings.ini, Miranda, mMir5
+; мигрировано ;;===================================================================================
+; мигрировано ;	IniWrite, 1, Settings.ini, Gender, Мужской
+; мигрировано ;	IniWrite, Tab, Settings.ini, KeySetup, key4
+; мигрировано ;		reload
+; мигрировано ;;===================================================================================
+; мигрировано ;	}
+; мигрировано ;;===================================================================================
 ------------------------------------------------------------------------------------------------------------
                                     -----Mane KEY-----
 ------------------------------------------------------------------------------------------------------------
