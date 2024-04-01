@@ -35,6 +35,7 @@
 	Radio5Rez := IniRead("Settings.ini", "Resolution", "1280x720")
 	Radio6Rez := IniRead("Settings.ini", "Resolution", "1920x1920")
 	Radio1Gen := IniRead("Settings.ini", "Gender", "Мужской")
+	Radio2Gen := IniRead("Settings.ini", "Gender", "Женский")
 ;===================================================================================
 ;------------------------------------------------------------------------------------------------------------
 ;                                    -----Mane Ini Peref-----

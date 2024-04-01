@@ -21,16 +21,33 @@ createHelperGui() {
   ;------------------------------------------------------------------------------------------------------------
   ;===================================================================================
   ManuButton := helperGui.Add("Button", "x10 y10 w113 h27", "ИНФОРМАЦИЯ")
-  ;ManuButton.OnEvent("Click", ManuButton_Click)
+  ManuButton.OnEvent("Click", ManuButton_Click)
   HotKeyButton := helperGui.Add("Button", "x10 y45 w113 h27", "БИНДЫ")
-  ;HotKeyButton.OnEvent("Click", HotKeyButton_Click)
+  HotKeyButton.OnEvent("Click", HotKeyButton_Click)
   Info1Button := helperGui.Add("Button", "x10 y80 w113 h27", "КОМАНДЫ")
-  ;Info1Button.OnEvent("Click", Info1Button_Click)
+  Info1Button.OnEvent("Click", Info1Button_Click)
   ComButton := helperGui.Add("Button", "x10 y115 w113 h27", "СОКРАЩЕНИЯ")
-  ;ComButton.OnEvent("Click", ComButton_Click)
+  ComButton.OnEvent("Click", ComButton_Click)
   MirButton := helperGui.Add("Button", "x10 y150 w113 h27", "МИРАНДА")
-  ;MirButton.OnEvent("Click", MirButton_Click)
+  MirButton.OnEvent("Click", MirButton_Click)
     
+  ManuButton_Click(x, y) {
+    Manu()  
+  }
+  HotKeyButton_Click(x,y) {
+    HotKey()
+  }
+  Info1Button_Click(x,y) {
+    Info1()
+  }
+  ComButton_Click(x,y) {
+    Com()
+  }
+  MirButton_Click(x,y) {
+    Mir()
+  }
+  
+  
   ;===================================================================================
   ;------------------------------------------------------------------------------------------------------------
   ;                                    		-----Левый нижний-----
