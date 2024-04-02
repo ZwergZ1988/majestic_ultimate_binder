@@ -260,11 +260,11 @@ defolt() {
   return
 }
 ;===================================================================================
-relog() {
-;  ButtonПерезапуститьскрипт:
-  Reload
-  return
-}
+;relog() {
+;;  ButtonПерезапуститьскрипт:
+;  Reload
+;  return
+;}
 ;===================================================================================
 exit() {
 ;  ButtonЗакрытьскрипт:
@@ -280,59 +280,88 @@ exit() {
 persona() {
   personaGui := Gui("-MaximizeBox", "Ваша Визитка")
   personaGui.Show("w250 h110")
-  personaGui.Color("838d96")
-  personaGui.Font("c0x000000")
-  personaGui.Add("Edit", "x5 y10 w145 h21 vvdis", "%vdis%")
-  personaGui.Add("Edit", "x5 y60 w145 h21 vqfrac", "%qfrac%")
-  personaGui.Add("Edit", "x5 y35 w145 h21 vwTel", "%wTel%")
-  personaGui.Add("Text", "x140 y8 w115 h23 +0x200 +0x1", "Discord Name")
+  personaGui.BackColor := "838d96"
+  personaGui.SetFont("c0x000000")
+  vdisEdit := personaGui.Add("Edit", "x5 y10 w145 h21", vdis)	
+	wTelEdit := personaGui.Add("Edit", "x5 y35 w145 h21", wTel)
+  qfracEdit := personaGui.Add("Edit", "x5 y60 w145 h21", qfrac)  
+	personaGui.Add("Text", "x140 y8 w115 h23 +0x200 +0x1", "Discord Name")
   personaGui.Add("Text", "x140 y57 w115 h23 +0x200 +0x1", "Ваша фракция")
   personaGui.Add("Text", "x140 y33 w115 h23 +0x200 +0x1", "Номер телефона")
   personaGuiAcceptButton := personaGui.Add("Button", "x5 y85 w118 h20", "𝐀𝐜𝐜𝐞𝐩𝐭")
-  ;personaGuiAcceptButton.OnEvent("Click", SaveData1)
+  personaGuiAcceptButton.OnEvent("Click", personaGuiAcceptButton_Click)
+	personaGuiAcceptButton_Click(*) {
+		personaGui.Submit(false)
+		vdis := vdisEdit.Value
+		qfrac := qfracEdit.Value
+		wTel := wTelEdit.Value
+		IniWrite(vdis, "Settings.ini", "Personal", "vdis")
+		IniWrite(qfrac, "Settings.ini", "Personal", "qfrac")
+		IniWrite(wTel, "Settings.ini", "Personal", "wTel")
+		MsgBox("Данные сохранены:`n" vdis "`n" qfrac "`n" wTel, "SAVE")
+		Reload
+	}	
   personaGuiDeclineButton := personaGui.Add("Button", "x128 y85 w120 h20", "𝐃𝐞𝐜𝐥𝐢𝐧𝐞")
-  ;personaGuiDeclineButton.OnEvent("Click", GuiClose1)
+  personaGuiDeclineButton.OnEvent("Click", (*) => personaGui.Destroy())
   return
 }
 ;===================================================================================
 Mir() {
   mirandaGui := Gui("-MaximizeBox", "𝐌𝐢𝐫𝐚𝐧𝐝𝐚")
   mirandaGui.Show("w510 h165")
-  mirandaGui.Color("838d96")
-  mirandaGui.Font("c0x000000")
-  mirandaGui.Add("Edit", "x5 y5 w500 h20 vmMir1", "%mMir1%")
-  mirandaGui.Add("Edit", "x5 y30 w500 h20 vmMir2", "%mMir2%")
-  mirandaGui.Add("Edit", "x5 y55 w500 h20 vmMir3", "%mMir3%")
-  mirandaGui.Add("Edit", "x5 y80 w500 h20 vmMir4", "%mMir4%")
-  mirandaGui.Add("Edit", "x5 y105 w500 h20 vmMir5", "%mMir5%")
+  mirandaGui.BackColor := "838d96"
+  mirandaGui.SetFont("c0x000000")
+  mMir1Edit := mirandaGui.Add("Edit", "x5 y5 w500 h20", mMir1)
+  mMir2Edit := mirandaGui.Add("Edit", "x5 y30 w500 h20", mMir2)
+  mMir3Edit := mirandaGui.Add("Edit", "x5 y55 w500 h20", mMir3)
+  mMir4Edit := mirandaGui.Add("Edit", "x5 y80 w500 h20", mMir4)
+  mMir5Edit := mirandaGui.Add("Edit", "x5 y105 w500 h20", mMir5)
   mirandaGuiAcceptButton := mirandaGui.Add("Button", "x50 y130 w400 h30", "𝐀𝐜𝐜𝐞𝐩𝐭")
-  ;mirandaGuiAcceptButton.OnEvent("Click", SaveData5)
+  mirandaGuiAcceptButton.OnEvent("Click", mirandaGuiAcceptButton_Click)
+	mirandaGuiAcceptButton_Click(*) {
+		;Gui, 7: Submit, NoHide
+		mMir1 := mMir1Edit.Value
+		mMir2 := mMir2Edit.Value
+		mMir3 := mMir3Edit.Value
+		mMir4 := mMir4Edit.Value
+		mMir5 := mMir5Edit.Value
+		IniWrite(mMir1, "Settings.ini", "Miranda", "mMir1")
+		IniWrite(mMir2, "Settings.ini", "Miranda", "mMir2")
+		IniWrite(mMir3, "Settings.ini", "Miranda", "mMir3")
+		IniWrite(mMir4, "Settings.ini", "Miranda", "mMir4")
+		IniWrite(mMir5, "Settings.ini", "Miranda", "mMir5")
+		MsgBox("Данные сохранены:`n"
+		mMir1 "`n"
+		mMir2 "`n"
+		mMir3 "`n"
+		mMir4 "`n"
+		mMir5, "SAVE"
+		)
+		Reload
+		return
+	}
   return
 }
-;===================================================================================,
-Cust() {
-  custGui := Gui("-MaximizeBox", "𝐂𝐮𝐬𝐭")
-  custGui.Show("w200 h123")
-  custGui.Color("838d96")
-  custGui.Font("c0x000000")
-  custGuiAcceptButton := custGui.Add("Button", "x3 y100 w95 h20", "𝐀𝐜𝐜𝐞𝐩𝐭")
-  ;custGuiAcceptButton.OnEvent("Click", SaveData8)
-  custGuiDeclineButton := custGui.Add("Button", "x102 y100 w95 h20", "𝐃𝐞𝐜𝐥𝐢𝐧𝐞")
-  ;custGuiDeclineButton.OnEvent("Click", relog)
-  return
-}
-;=================================================================================== 
+
 badge() {
   badgeGui := Gui("-MaximizeBox", "Ваш Жетон")
   badgeGui.Show("w360 h75")
-  badgeGui.Color("838d96")
-  badgeGui.Font("c0x000000")
-  badgeGui.Add("Edit", "x5 y5 w350 h35 vgbadge", "%gbadge%")
+  badgeGui.BackColor := "838d96"
+  badgeGui.SetFont("c0x000000")
+  gbadgeEdit := badgeGui.Add("Edit", "x5 y5 w350 h35", gbadge)
   badgeGui.Add("Text", "x5 y27 w260 h42 +0x200 +0x1", "Пишем полную отыгровку, не ставя '/do'.")
   badgeGuiAcceptButton := badgeGui.Add("Button", "x260 y43 w45 h28", "𝐀𝐜𝐜𝐞𝐩𝐭")
-  ;badgeGuiAcceptButton.OnEvent("Click", SaveData8)
+  badgeGuiAcceptButton.OnEvent("Click", badgeGuiAcceptButton_Click)
+	badgeGuiAcceptButton_Click(*) {
+		badgeGui.Submit(false)
+		gbadge := gbadgeEdit.Value
+		IniWrite(gbadge, "Settings.ini", "Badge", "gbadge")
+		MsgBox("Данные сохранены:`n" gbadge, "SAVE")
+		Reload
+		return
+	}
   badgeGuiDeclineButton := badgeGui.Add("Button", "x310 y43 w45 h28", "𝐃𝐞𝐜𝐥𝐢𝐧𝐞")
-  ;badgeGuiDeclineButton.OnEvent("Click", GuiClose12)
+  badgeGuiDeclineButton.OnEvent("Click", (*) => badgeGui.Destroy())
   return
 }  
 
@@ -348,11 +377,11 @@ Mira() {
 	If state3 {
 	CustomColor3 := "EEAA99"
 	miraGui := Gui("+LastFound +AlwaysOnTop -Caption +ToolWindow") 
-	miraGui.Color( "black")
-	miraGui.Font( "s8")
-	miraGui.Font( "cYellow")
-	miraGui.Font( "w650")
-	miraGui.Font( "verdana")
+	miraGui.BackColor :=  "black"
+	miraGui.SetFont( "s8")
+	miraGui.SetFont( "cYellow")
+	miraGui.SetFont( "w650")
+	miraGui.SetFont( "verdana")
 	miraGui.ADD("TEXT","cBlue","==============================================================================================")
 	miraGui.ADD("TEXT","cRed","`                        		 Правило введёное Верховным судом USA:")
 	miraGui.ADD("TEXT","c%rColor2%", "%mMir1%")
@@ -374,11 +403,11 @@ Help() {
 	If state3 {
 	CustomColor3 := "EEAA99"
 	helpGui := Gui("+LastFound +AlwaysOnTop -Caption +ToolWindow ")
-	helpGui.Color("black")
-	helpGui.Font("s8")
-	helpGui.Font("c0x000000")
-	helpGui.Font("w680")
-	helpGui.Font("verdana")
+	helpGui.BackColor := "black"
+	helpGui.SetFont("s8")
+	helpGui.SetFont("c0x000000")
+	helpGui.SetFont("w680")
+	helpGui.SetFont("verdana")
 	helpGui.ADD("TEXT","c%rColor2%", ".угон .нарко .фрапс .вин .тикет Розыск-.кпк")
 	helpGui.ADD("TEXT","c%rColor2%", "Проверка личности: .бдкпк | .отпечатки | .кровь (в лаборатории) ")
 	helpGui.ADD("TEXT","c%rColor2%", ".адвокат .прокурор .взятка .обыск .юр .кпз ")

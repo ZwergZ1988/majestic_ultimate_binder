@@ -54,35 +54,88 @@ createHelperGui() {
   ;------------------------------------------------------------------------------------------------------------
   ;===================================================================================
   SaveDataButton := helperGui.Add("Button", "x10 y415 w113 h25", "𝐒𝐀𝐕𝐄")
-  ;SaveDataButton.OnEvent("Click", SaveDataButton_Click)
+  SaveDataButton.OnEvent("Click", SaveDataButton_Click)
+  SaveDataButton_Click(*) {
+		;Gui, Submit, NoHide
+      Radio1Rez := Radio1RezRadio.Value  
+      IniWrite(Radio1Rez, "Settings.ini", "Resolution", "1920x1080")
+			Radio2Rez := Radio2RezRadio.Value
+      IniWrite(Radio2Rez, "Settings.ini", "Resolution", "1680x1050")
+			Radio3Rez := Radio3RezRadio.Value
+      IniWrite(Radio3Rez, "Settings.ini", "Resolution", "1440x900")
+			Radio4Rez := Radio4RezRadio.Value
+      IniWrite(Radio4Rez, "Settings.ini", "Resolution", "1280x1024")
+			Radio5Rez := Radio5RezRadio.Value
+      IniWrite(Radio5Rez, "Settings.ini", "Resolution", "1280x720")
+			Radio6Rez := Radio6RezRadio.Value
+      IniWrite(Radio6Rez, "Settings.ini", "Resolution", "1920x1920")
+			
+      Radio1Gen := Radio1GenRadio.Value  
+      IniWrite(Radio1Gen, "Settings.ini", "Gender", "Мужской")
+      Radio2Gen := Radio2GenRadio.Value  
+			IniWrite(Radio2Gen, "Settings.ini", "Gender", "Женский")
+
+      key1 := Hotkey1.Value
+      key3 := Hotkey3.Value
+      key5 := Hotkey5.Value
+      key9 := Hotkey9.Value
+      key10 := Hotkey10.Value
+      key11 := Hotkey11.Value
+      key12 := Hotkey12.Value
+      key17 := Hotkey17.Value
+      key18 := Hotkey18.Value
+      key19 := Hotkey19.Value
+
+			IniWrite(key1, "Settings.ini", "KeySetup", "KEY1")
+			IniWrite(key3, "Settings.ini", "KeySetup", "KEY3")
+			;IniWrite(key4, "Settings.ini", "KeySetup", "KEY4")
+			IniWrite(key5, "Settings.ini", "KeySetup", "KEY5")
+			;IniWrite(key6, "Settings.ini", "KeySetup", "KEY6")
+			;IniWrite(key7, "Settings.ini", "KeySetup", "KEY7")
+			;IniWrite(key8, "Settings.ini", "KeySetup", "KEY8")
+			IniWrite(key9, "Settings.ini", "KeySetup", "KEY9")
+			IniWrite(key10, "Settings.ini", "KeySetup", "KEY10")
+			IniWrite(key11, "Settings.ini", "KeySetup", "KEY11")
+			IniWrite(key12, "Settings.ini", "KeySetup", "KEY12")
+			;IniWrite(key13, "Settings.ini", "KeySetup", "KEY13")
+			;IniWrite(key14, "Settings.ini", "KeySetup", "KEY14")
+			;IniWrite(key15, "Settings.ini", "KeySetup", "KEY15")
+			;IniWrite(key16, "Settings.ini", "KeySetup", "KEY16")
+			IniWrite(key17, "Settings.ini", "KeySetup", "KEY17")
+			IniWrite(key18, "Settings.ini", "KeySetup", "KEY18")
+			IniWrite(key19, "Settings.ini", "KeySetup", "KEY19")
+			;MsgBox("SAVE", "Данные сохранены.")
+		Reload
+		return
+	}
   relogButton := helperGui.Add("Button", "x10 y445 w113 h25", "𝐑𝐄𝐋𝐎𝐀𝐃")
-  ;relogButton.OnEvent("Click", relogButton_Click)
+  relogButton.OnEvent("Click", (*) => Reload())
   exitButton := helperGui.Add("Button", "x10 y475 w113 h25", "𝐄𝐗𝐈𝐓")
-  ;exitButton.OnEvent("Click", exitButton_Click)
+  exitButton.OnEvent("Click", (*) => ExitApp())
   ;===================================================================================
   ;------------------------------------------------------------------------------------------------------------
   ;                                    	  -----Правый блок кнопок-----
   ;------------------------------------------------------------------------------------------------------------
   ;===================================================================================
   badgeButton := helperGui.Add("Button", "x300 y38 w138 h25", "𝐁𝐀𝐃𝐆𝐄")
-  ;badgeButton.OnEvent("Click", badgeButton_Click)
+  badgeButton.OnEvent("Click", (*) => badge())
   personaButton := helperGui.Add("Button", "x445 y38 w138 h25", "𝐕𝐈𝐒𝐈𝐓𝐈𝐍𝐆 𝐂𝐀𝐑𝐃")
-  ;personaButton.OnEvent("Click", personaButton_Click)
+  personaButton.OnEvent("Click", (*) => persona())
   ;===================================================================================
   ;------------------------------------------------------------------------------------------------------------
   ;                                    	-----GUI HotKey-----
   ;------------------------------------------------------------------------------------------------------------
   ;===================================================================================
-  helperGui.Add("Hotkey", "x156 y40 w48 h21 vHot1") ; , KEY1)
-  helperGui.Add("Hotkey", "x156 y65 w48 h21 vHot3") ; , KEY3)
-  helperGui.Add("Hotkey", "x156 y90 w48 h21 vHot5") ; , KEY5)
-  helperGui.Add("Hotkey", "x156 y115 w48 h21 vHot9") ; , KEY9)
-  helperGui.Add("Hotkey", "x156 y140 w48 h21 vHot10") ; , KEY10)
-  helperGui.Add("Hotkey", "x156 y165 w48 h21 vHot11") ; , KEY11)
-  helperGui.Add("Hotkey", "x156 y190 w48 h21 vHot12") ; , KEY12)
-  helperGui.Add("Hotkey", "x156 y215 w48 h21 vHot17") ; , KEY17)
-  helperGui.Add("Hotkey", "x156 y240 w48 h21 vHot18") ; , KEY18)
-  helperGui.Add("Hotkey", "x156 y265 w48 h21 vHot19") ; , KEY19)
+  Hotkey1 := helperGui.Add("Hotkey", "x156 y40 w48 h21", key1)  
+  Hotkey3 := helperGui.Add("Hotkey", "x156 y65 w48 h21", key3)
+  Hotkey5 := helperGui.Add("Hotkey", "x156 y90 w48 h21", key5)
+  Hotkey9 := helperGui.Add("Hotkey", "x156 y115 w48 h21", key9)
+  Hotkey10 := helperGui.Add("Hotkey", "x156 y140 w48 h21", key10)
+  Hotkey11 := helperGui.Add("Hotkey", "x156 y165 w48 h21", key11)
+  Hotkey12 := helperGui.Add("Hotkey", "x156 y190 w48 h21", key12)
+  Hotkey17 := helperGui.Add("Hotkey", "x156 y215 w48 h21", key17)
+  Hotkey18 := helperGui.Add("Hotkey", "x156 y240 w48 h21", key18)
+  Hotkey19 := helperGui.Add("Hotkey", "x156 y265 w48 h21", key19)
   ;===================================================================================
   ;------------------------------------------------------------------------------------------------------------
   ;                                	-----GUI Расшифровок-----
@@ -104,12 +157,16 @@ createHelperGui() {
   ;------------------------------------------------------------------------------------------------------------
   ;===================================================================================
   helperGui.Add("Text", "x381 y75 w125 h20 +0x200 +Border +0x1", "𝐑𝐞𝐬𝐨𝐥𝐮𝐭𝐢𝐨𝐧")
-  helperGui.Add("Radio", "x320 y105 w80 h15 Group vRadio1Rez Checked%Radio1Rez%", "𝟏𝟗𝟐𝟎𝐱𝟏𝟎𝟖𝟎")
-  helperGui.Add("Radio", "x415 y105 w80 h15 vRadio2Rez Checked%Radio2Rez%", "𝟏𝟔𝟖𝟎𝐱𝟏𝟎𝟓𝟎")
-  helperGui.Add("Radio", "x510 y105 w80 h15 vRadio3Rez Checked%Radio3Rez%", "𝟏𝟒𝟒𝟎𝐱𝟗𝟎𝟎")
-  helperGui.Add("Radio", "x320 y130 w80 h15 vRadio4Rez Checked%Radio4Rez%", "𝟏𝟐𝟖𝟎𝐱𝟏𝟎𝟐𝟒")
-  helperGui.Add("Radio", "x415 y130 w80 h15 vRadio5Rez Checked%Radio5Rez%", "𝟏𝟐𝟖𝟎𝐱𝟕𝟐𝟎")
-  helperGui.Add("Radio", "x510 y130 w80 h15 vRadio6Rez Checked%Radio6Rez%", "𝟏𝟗𝟐𝟎𝐱𝟏𝟗𝟐𝟎")
+  Radio1RezRadio := helperGui.Add("Radio", "x320 y105 w80 h15 Group Checked" Radio1Rez, "𝟏𝟗𝟐𝟎𝐱𝟏𝟎𝟖𝟎")
+  Radio2RezRadio := helperGui.Add("Radio", "x415 y105 w80 h15 Checked" Radio2Rez, "𝟏𝟔𝟖𝟎𝐱𝟏𝟎𝟓𝟎")
+  Radio3RezRadio := helperGui.Add("Radio", "x510 y105 w80 h15 Checked" Radio3Rez, "𝟏𝟒𝟒𝟎𝐱𝟗𝟎𝟎")
+  Radio4RezRadio := helperGui.Add("Radio", "x320 y130 w80 h15 Checked" Radio4Rez, "𝟏𝟐𝟖𝟎𝐱𝟏𝟎𝟐𝟒")
+  Radio5RezRadio := helperGui.Add("Radio", "x415 y130 w80 h15 Checked" Radio5Rez, "𝟏𝟐𝟖𝟎𝐱𝟕𝟐𝟎")
+  Radio6RezRadio := helperGui.Add("Radio", "x510 y130 w80 h15 Checked" Radio6Rez, "𝟏𝟗𝟐𝟎𝐱𝟏𝟗𝟐𝟎")
+
+  helperGui.Add("Text", "x381 y160 w125 h20 +0x200 +Border +0x1", "𝐆𝐞𝐧𝐝𝐞𝐫")
+  Radio1GenRadio := helperGui.Add("Radio", "x365 y190 w80 h15 Group Checked" Radio1Gen, "Мужской")
+  Radio2GenRadio := helperGui.Add("Radio", "x460 y190 w80 h15 Checked" Radio2Gen, "Женский")
 
   return helperGui
 }
